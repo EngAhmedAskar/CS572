@@ -1,0 +1,18 @@
+/* https://jsfiddle.net/sy7ahzg8/*/
+
+const item = 
+  { "name": "Biscuits",
+    "type": "regular",
+    "category": "food",
+    "price" : 2.0
+  } ;
+  
+  
+  let applyCoupon = food => price => inputItem => {
+  		if(inputItem.category === "food"){
+        inputItem.price = inputItem.price - (inputItem.price * price);
+      }
+      return inputItem;
+  }
+  
+  console.log('Result is: ' + (applyCoupon("food")(0.1)(item).price === 1.8));
