@@ -1,0 +1,38 @@
+
+let arr1 = [4,1,5,7,2,3,1,4,6,5,2];
+var removedub = function(arr){
+arr = arr.filter( function( item, index, inputArray ) {
+           return inputArray.indexOf(item) == index;
+    });
+return arr;
+}
+arr1=removedub(arr1);
+    console.log(arr1);
+    
+ var removedubPromise = function (arr) {
+  return new Promise(function (resolve, reject) {
+    resolve( removedub(arr) );
+  });
+};
+ console.log(removedubPromise(arr1));
+ 
+ 
+ /* https://jsfiddle.net/5kxpvost/*/
+ 
+ 
+ 
+ async function removedubasync(arr){
+ try{
+ console.log("TestingBefore");
+ let results = await removedub(arr);
+ console.log(results);
+ console.log("TestingAfter");
+ }
+ catch{
+ console.log("error");
+ };
+ } ;
+ removedubasync(arr1);
+ const {from} = rxjs;
+ from(removedubPromise(arr1)).subscribe((e)=>console.log(e));
+ 
