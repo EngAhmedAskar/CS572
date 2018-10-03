@@ -1,0 +1,21 @@
+/* https://jsfiddle.net/mrvscuz9/*/
+
+
+let daysenum = {
+0: 'Weekend',
+1: 'Weekday',
+'other': 'weekday'
+} 
+
+function isWeekend(){
+   const todayDate = new Date();
+   const day = todayDate.getDay();
+    
+   let Result = daysenum[day] || daysenum.other;
+   
+   return Result;
+}
+
+
+
+console.log('Result is = ' + isWeekend());
