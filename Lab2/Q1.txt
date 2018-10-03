@@ -1,0 +1,15 @@
+1- if we want to run something at the end of the timer queue we will use the time out
+ but if we need the results of the callback queue and the I/O queue we need to use the immdiate as it push the function to the check phase.
+2-if we want to run the function or code at the end of the current operations we use .nexttick() but if we want to run the code at the check
+phase we will  which mean wait for th call back and the I\O phases then we use immediate.
+3-
+1-assert
+2-child_process
+3-cluster
+4-dgram
+5-domain
+6-net
+7-readline
+8-stream
+9-tty
+10-vm
