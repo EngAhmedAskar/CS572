@@ -1,0 +1,21 @@
+var http = require('http');
+var fs = require('fs');
+http.createServer(function (req, res) {
+    var rs = ReadFile(res);
+}).listen(1337, () => console.log('I am the Server!'))
+
+
+const { Subject } = require('rxjs');
+const subject = new Subject();
+
+
+function ReadFile(obj) {
+    var rs = fs.createReadStream('lab3.txt').pipe(obj.res);
+//res.res
+console.log(obj.res)
+}
+subject.subscribe(ReadFile);
+http.createServer((req, res) => {
+    subject.next({ req: req, res: res });
+    //res.end('hello');
+}).listen(3000, () => console.log('I am the Server!'));
