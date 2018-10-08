@@ -35,8 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(validator());
 
 
-// app.use('/', indexRouter);
-// app.use('/users', usersRouter);
+
 
 class Grade{
   constructor(id, name, course, grade){
@@ -47,7 +46,7 @@ class Grade{
   }
 }
 let gradesData = [];
-gradesData.push(new Grade(1, 'Asaad Saad', 'CS572', 95));
+gradesData.push(new Grade(1, 'Ahmed Askar', 'CS572', 95));
 
 //5-Routs
 app.get('/grades', function(req, res){
@@ -74,11 +73,11 @@ app.get('/grades/:gradeId', function(req, res, next){
   }
 
   res.status(204);
-  // res.json({message: "Grade Not Found", returnCode: 204});
+ 
   res.send();
 });
 
-/* Example {"id": 2, "name": "Ahmed Askar", "course": "CS579", "grade": 98} */
+
 app.post('/grades/add', function(req, res){
   console.log('Checking Grade Parameters for POST Add!');
 
