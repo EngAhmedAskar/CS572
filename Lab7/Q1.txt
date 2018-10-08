@@ -1,0 +1,9 @@
+Create one collection named Book {
+BookName : "",
+author : "",
+isborrowed : true,
+Returndate: "",
+Student : "name",
+ISBN : number,
+}
+

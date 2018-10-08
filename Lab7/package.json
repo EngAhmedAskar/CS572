@@ -1,0 +1,22 @@
+{
+  "name": "labs",
+  "version": "1.0.0",
+  "main": "Untitled-2.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "crypto": "^1.0.1",
+    "express": "^4.16.3",
+    "express-validator": "^5.3.0",
+    "http-errors": "^1.7.1",
+    "less-middleware": "^3.0.1",
+    "mongodb": "^3.1.6",
+    "morgan": "^1.9.1",
+    "rxjs": "^6.3.3"
+  }
+}
