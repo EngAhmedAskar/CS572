@@ -1,0 +1,5 @@
+Create three indexes over the book collection one index for each of the following properties:
+
+  - ISBN
+  - Author
+  - Tags
