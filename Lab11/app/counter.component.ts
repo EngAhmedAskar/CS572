@@ -1,4 +1,4 @@
-import { Component, OnInit, Input,Output,EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-counter',
@@ -10,39 +10,39 @@ import { Component, OnInit, Input,Output,EventEmitter } from '@angular/core';
   {{counterValue}}
   <button (click)="increase()">+</button>      
 </p>
-<span>Component Counter Value = {{componentCounterValue}}</span>
+
   `,
   styleUrls: ['./counter.component.css'],
-  inputs : ['counter','componentCounterValue'],
-  outputs : ['counterchange']
+  inputs: ['counter'],
+  outputs: ['counterchange']
 })
 export class CounterComponent implements OnInit {
   counterValue: number = 0;
-  counter : number = 0;
-  componentCounterValue : number;
-  counterchange : EventEmitter<number>;
+  counter: number = 0;
+
+  counterchange: EventEmitter<number>;
   constructor() {
     this.counterValue = 1;
     this.counterchange = new EventEmitter();
   }
-increase(){
-this.counterValue++;
-this.componentCounterValue = this.counterValue;
-this.counterchange.emit(this.counterValue);
-return false;
+  increase() {
+    this.counterValue++;
 
-}
-decrease(){
-  this.counterValue--;
-  this.componentCounterValue = this.counterValue;
-  this.counterchange.emit(this.counterValue);
-  return false;
-}
-counterNewVal(e){
-  this.counterValue=e.target.value;
-  this.componentCounterValue = this.counterValue;
-  this.counterchange.emit(this.counterValue);
-}
+    this.counterchange.emit(this.counterValue);
+    return false;
+
+  }
+  decrease() {
+    this.counterValue--;
+
+    this.counterchange.emit(this.counterValue);
+    return false;
+  }
+  counterNewVal(e) {
+    this.counterValue = e.target.value;
+
+    this.counterchange.emit(this.counterValue);
+  }
   ngOnInit() {
 
   }

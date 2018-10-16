@@ -7,6 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Lab 11';
-  
+  componentCounterValue = 0;
+
+  counterUpdated(event){
+   
+    this.componentCounterValue = event;
+  }
 
 }
