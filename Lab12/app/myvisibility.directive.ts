@@ -2,10 +2,10 @@ import { Directive, ElementRef, Renderer2, HostListener, HostBinding, Input, OnI
 
 @Directive({
   selector: '[Myvisibility]',
-  
 })
 export class MyvisibilityDirective implements OnChanges {
   @Input() Myvisibility:boolean;
+  // either input with same name or differ name but in the host we use Myvisibility [differinput] = 'value'
   constructor(private e: ElementRef, private r: Renderer2) {
 
   }
