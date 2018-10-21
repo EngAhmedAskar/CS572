@@ -2,23 +2,25 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { DbService } from './db.service';
+import { OlympicsModule } from './olympics/olympics.module';
+import { AppRoutingModule } from './app-routing.module';
+import { ErrorComponent } from './error/error.component';
 
-import { MyvisibilityDirective } from './myvisibility.directive';
-import { MynewcolorDirective } from './mynewcolor.directive';
-import { ArrstrComponent } from './arrstr.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-   
-    MyvisibilityDirective,
-    MynewcolorDirective,
-    ArrstrComponent
+    ErrorComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    OlympicsModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [DbService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
